@@ -20,6 +20,35 @@ node* create(int a[])
     }
     return head;
 }
+void insert(node* head,int pos,int x)
+{
+    node* p=head;
+    for(int i=0;i<pos-1;i++)
+    {
+        p=p->next;
+    }
+    node* q=new node;
+    q->data=x;
+    q->next=p->next;
+    p->next=q;
+}
+void del(node* head,int x)
+{
+    node* p=head->next;
+    node* pre=head;
+    while(p!=NULL)
+    {
+        if(p->data==x)
+        {
+            pre->next=p->next;
+            delete(p);
+            p=pre->next;
+        }else{
+            pre=p;
+            p=p->next;
+        }
+    }
+}
 int main(void)
 {
     int a[5]={5,9,4,6,3};
