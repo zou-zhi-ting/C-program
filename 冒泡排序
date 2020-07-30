@@ -1,0 +1,26 @@
+#include <iostream>
+#define N 10
+using namespace std;
+int main()
+{
+    int a[N]={8,1,4,9,10,18,6,7,2,3};
+    for(int i=1;i<=N-1;i++)   //进行N-1趟
+    {
+        for(int j=0;j<N-i;j++)
+        {
+            if(a[j]>a[j+1])   //交换a[j]和a[j+1]
+            {
+                int temp;
+                temp=a[j+1];
+                a[j+1]=a[j];
+                a[j]=temp;
+            }
+        }
+    }
+    for(int i=0;i<N;i++)
+    {
+        cout<<a[i]<<" ";
+    }
+    return 0;
+}
+                
