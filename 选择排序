@@ -1,0 +1,25 @@
+描述：对序列a中的元素a[0]~a[n-1]，令i从0~n-1枚举，进行n次操作。每次从[i,n-1]中选择最小的元素令其与待排序部分的第一个元素a[i]交换。
+#include <iostream>
+#define N 10
+using namespace std;
+int main()
+{
+    int a[N]={12,8,6,19,62,48,2,7,4,23};
+    for(int i=0;i<N;i++) //进行N趟操作
+    {
+        int k=i;
+        for(int j=i;j<N;j++) //选出[i,N]中最小的元素，下标为k
+        {
+            if(a[j]<a[k])
+            {
+                k=j;
+            }
+        }
+        int temp=a[i];
+        a[i]=a[k];
+        a[k]=temp;
+    }
+    for(int i=0;i<N;i++)
+        cout<<a[i]<<" ";
+    return 0;
+}
