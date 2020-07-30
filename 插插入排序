@@ -1,0 +1,20 @@
+描述：将序列分为两部分，将待排序部分第一个元素与已排序部分从后往前依次比较，选择正确位置插入。
+#include <iostream>
+#define N 10
+using namespace std;
+int main()
+{
+    int a[N]={12,8,6,19,62,48,2,7,4,23};
+    for(int i=1;i<N;i++)// 进行N-1次排序
+    {
+        int temp=a[i],j=i;   //temp临时存放a[i],j从i开始往前枚举
+        while(j>0&&temp<a[j-1]){
+            a[j]=a[j-1];
+            j--;
+        }
+        a[j]=temp;
+    }
+    for(int i=0;i<N;i++)
+        cout<<a[i]<<" ";
+    return 0;
+}
