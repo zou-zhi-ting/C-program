@@ -1,5 +1,11 @@
-
-
+描述：分七种情况讨论从后往前运算：
+(1) I II III;
+(2) V IV;
+(3) X IX;
+(4) L XL;
+(5) C XC;
+(6) D CD;
+(7) M CM;
 class Solution {
 public:
     int romanToInt(string s) {
