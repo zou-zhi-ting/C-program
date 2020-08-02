@@ -1,0 +1,19 @@
+template<class T>
+T* BST<T>::search(BSTNode<T>*p,const &T el) const{
+    while(p!=0)
+    {
+        if(el==p->el)
+        {
+            return &p->el;
+        }
+        else if(el<p->el)
+        {
+            p=p->left;
+        }
+        else
+        {
+            p=p->right;
+        }
+    }
+    return 0;
+}
